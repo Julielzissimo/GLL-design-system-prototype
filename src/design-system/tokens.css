@@ -1,0 +1,46 @@
+:root {
+  /* GLL / direção visual para validação */
+  --gll-ink: #182923;
+  --gll-ink-soft: #4c5d55;
+  --gll-forest: #183d35;
+  --gll-forest-hover: #28564a;
+  --gll-accent: #b57b43;
+  --gll-canvas: #f5f3ed;
+  --gll-paper: #fffefa;
+  --gll-paper-muted: #efeee7;
+  --gll-line: #d9dcd2;
+  --gll-line-strong: #b8c2b5;
+  --gll-success: #256a4f;
+  --gll-success-bg: #e4f1e8;
+  --gll-warning: #895a1a;
+  --gll-warning-bg: #f6ebd5;
+  --gll-danger: #9c4c42;
+  --gll-danger-bg: #f7e9e5;
+  --gll-info: #35647c;
+  --gll-info-bg: #e6eef1;
+  --gll-focus: #ad7237;
+  --gll-font-body: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
+  --gll-font-display: 'IBM Plex Serif', Georgia, serif;
+  --gll-font-mono: 'IBM Plex Mono', Consolas, monospace;
+  --gll-text-xs: .72rem;
+  --gll-text-sm: .82rem;
+  --gll-text-md: .94rem;
+  --gll-text-lg: 1.14rem;
+  --gll-text-xl: 1.62rem;
+  --gll-text-display: clamp(1.9rem, 2.7vw, 2.75rem);
+  --gll-space-1: .25rem;
+  --gll-space-2: .5rem;
+  --gll-space-3: .75rem;
+  --gll-space-4: 1rem;
+  --gll-space-6: 1.5rem;
+  --gll-space-8: 2rem;
+  --gll-space-12: 3rem;
+  --gll-radius-sm: 4px;
+  --gll-radius-md: 8px;
+  --gll-radius-lg: 12px;
+  --gll-shadow-sm: 0 2px 8px rgb(24 41 35 / 5%);
+  --gll-shadow-md: 0 14px 34px rgb(24 41 35 / 12%);
+  --gll-shadow-overlay: 0 30px 70px rgb(10 30 24 / 22%);
+  --gll-sidebar-width: 238px;
+  --gll-control-height: 40px;
+}

@@ -1,0 +1,12 @@
+import type { Meta } from '@storybook/react-vite'
+
+const meta = { title: 'GLL Design System/Foundations' } satisfies Meta
+export default meta
+
+const colors = [['Floresta', '#183d35', 'Ações e navegação'], ['Papel', '#fffefa', 'Superfícies'], ['Tela', '#f5f3ed', 'Plano de fundo'], ['Âmbar', '#b57b43', 'Ênfase'], ['Sucesso', '#256a4f', 'Confirmações'], ['Atenção', '#895a1a', 'Pendências'], ['Erro', '#9c4c42', 'Falhas']]
+export const Colors = { render: () => <main className="gll-surface"><h1>Cores</h1><p className="gll-muted">Paleta semântica proposta.</p><div className="gll-swatch-grid">{colors.map(([name, value, usage]) => <div className="gll-swatch" key={name}><span style={{ background: value }}/><strong>{name}</strong><code>{value}</code><small>{usage}</small></div>)}</div></main> }
+export const Typography = { render: () => <main className="gll-surface"><h1>Tipografia</h1><div className="gll-type-showcase"><div><span>DISPLAY / IBM PLEX SERIF</span><h2>Clareza para decidir.</h2></div><div><span>INTERFACE / IBM PLEX SANS</span><p>Uma interface operacional precisa ser legível, compacta e previsível.</p></div><div><span>DADOS / IBM PLEX MONO</span><code>PE 014/2026 · R$ 184.500</code></div></div></main> }
+export const Spacing = { render: () => <main className="gll-surface"><h1>Espaçamento</h1><div className="gll-spacing-showcase">{[4, 8, 12, 16, 24, 32, 48].map((size) => <div key={size}><code>{size}px</code><span style={{ width: size * 3 }}/></div>)}</div></main> }
+export const Radius = { render: () => <main className="gll-surface"><h1>Radius</h1><div className="gll-shape-showcase"><div><span>4px</span><small>Controles</small></div><div><span>8px</span><small>Painéis</small></div><div><span>12px</span><small>Diálogos</small></div></div></main> }
+export const Shadows = { render: () => <main className="gll-surface"><h1>Sombras</h1><div className="gll-shape-showcase"><div style={{ boxShadow: 'var(--gll-shadow-sm)' }}>Subtle</div><div style={{ boxShadow: 'var(--gll-shadow-md)' }}>Raised</div><div style={{ boxShadow: 'var(--gll-shadow-overlay)' }}>Overlay</div></div></main> }
+export const Breakpoints = { render: () => <main className="gll-surface"><h1>Breakpoints</h1><div className="gll-mini-table"><div><strong>Faixa</strong><strong>Largura</strong><strong>Uso</strong></div><div><span>Desktop</span><span>Acima de 1180px</span><span>Grade completa</span></div><div><span>Tablet</span><span>781–1180px</span><span>Grade reduzida</span></div><div><span>Mobile</span><span>Até 780px</span><span>Menu em painel</span></div></div></main> }
