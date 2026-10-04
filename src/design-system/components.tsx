@@ -6,7 +6,7 @@ import * as DropdownPrimitive from '@radix-ui/react-dropdown-menu'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 import { X } from 'lucide-react'
 
-export const buttonStyles = cva('gll-button', {
+const buttonStyles = cva('gll-button', {
   variants: {
     variant: { primary: 'gll-button--primary', secondary: 'gll-button--secondary', quiet: 'gll-button--quiet', danger: 'gll-button--danger' },
     size: { default: 'gll-button--default', small: 'gll-button--small', icon: 'gll-button--icon' },

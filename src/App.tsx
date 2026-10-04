@@ -38,6 +38,7 @@ function statusTone(status: string): Tone {
 }
 function Status({ status }: { status: string }) { return <Badge tone={statusTone(status)}>{status}</Badge> }
 function getRoute() { return decodeURIComponent(window.location.hash.replace(/^#\/?/, '')) || 'visao-geral' }
+function go(path: string) { window.location.hash = `#/${path}` }
 function Empty({ title, text, action }: { title: string; text: string; action?: React.ReactNode }) { return <div className="gll-empty"><div className="gll-empty-icon"><Search size={22}/></div><h3>{title}</h3><p>{text}</p>{action}</div> }
 function SectionHeading({ title, aside }: { title: string; aside?: React.ReactNode }) { return <div className="gll-section-heading"><h2>{title}</h2>{aside}</div> }
 
@@ -50,10 +51,10 @@ const bidSchema = z.object({
 })
 type BidFields = z.infer<typeof bidSchema>
 
-function NewBidDialog({ open, onOpenChange, onCreate }: { open: boolean; onOpenChange: (open: boolean) => void; onCreate: (bid: Bid) => void }) {
+function NewBidDialog({ open, onOpenChange, onCreate }: { open: boolean; onOpenChange: (open: boolean) => void; onCreate: (bid: Omit<Bid, 'id'>) => void }) {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<BidFields>({ resolver: zodResolver(bidSchema), defaultValues: { edital: '', orgao: '', objeto: '', modalidade: '', sessao: '' } })
   const submit = (fields: BidFields) => {
-    onCreate({ ...fields, id: `lic-demo-${Date.now()}`, status: 'Em análise', valor: 0, responsavel: 'Marina Costa', documentos: 0 })
+    onCreate({ ...fields, status: 'Em análise', valor: 0, responsavel: 'Marina Costa', documentos: 0 })
     reset()
     onOpenChange(false)
   }
@@ -99,12 +100,11 @@ function App() {
   const [supplierName, setSupplierName] = useState('')
   useEffect(() => { if (!window.location.hash) window.location.hash = '#/visao-geral'; const onHash = () => { setRoute(getRoute()); setMobileNav(false); window.scrollTo(0, 0) }; window.addEventListener('hashchange', onHash); return () => window.removeEventListener('hashchange', onHash) }, [])
   useEffect(() => { if (!toast) return; const id = window.setTimeout(() => setToast(''), 4300); return () => window.clearTimeout(id) }, [toast])
-  const go = (path: string) => { window.location.hash = `#/${path}` }
   const page = route.split('/')[0]
   const selectedBid = page === 'licitacoes' && route.split('/')[1] ? bids.find((bid) => bid.id === route.split('/')[1]) : undefined
   const selectedBudget = page === 'orcamentos' && route.split('/')[1] ? budgets.find((item) => item.id === route.split('/')[1]) : undefined
   const activeLabel = nav.flatMap((group) => group.items).find((item) => item.path === page)?.label ?? 'Visão geral'
-  const createBid = (bid: Bid) => { setBids((current) => [bid, ...current]); setToast('Licitação fictícia cadastrada para esta sessão.'); go(`licitacoes/${bid.id}`) }
+  const createBid = (bid: Omit<Bid, 'id'>) => { const created = { ...bid, id: `lic-demo-${bids.length + 1}` }; setBids((current) => [created, ...current]); setToast('Licitação fictícia cadastrada para esta sessão.'); go(`licitacoes/${created.id}`) }
   const updateStatus = (status: BidStatus) => { if (!selectedBid) return; setBids((current) => current.map((bid) => bid.id === selectedBid.id ? { ...bid, status } : bid)); setToast(`Status atualizado para ${status} no protótipo.`) }
   const createSupplier = (event: FormEvent) => { event.preventDefault(); if (supplierName.trim().length < 3) return; setSuppliers((current) => [{ id: `for-${Date.now()}`, name: supplierName.trim(), category: 'Não definida', contact: 'contato@exemplo.invalid', city: 'Não informada', products: 0, status: 'Em revisão' }, ...current]); setSupplierName(''); setNewSupplierOpen(false); setToast('Fornecedor fictício incluído nesta sessão.') }
   const upcoming = bids.filter((bid) => bid.sessao >= '2026-10-04').toSorted((a, b) => a.sessao.localeCompare(b.sessao)).slice(0, 4)
