@@ -7,7 +7,7 @@ Interface de trabalho para operações de licitação: legível, sóbria e compa
 ## Fonte única
 
 - `src/design-system/tokens.css`: cores, tipografia, escala espacial, formas, elevação e dimensões.
-- `src/design-system/components.tsx`: `Button`, `IconButton`, `Badge`, `Surface`, `Input`, `Field`, `Dialog`, `Dropdown`, `Tooltip` e `PageHeader`.
+- `src/design-system/components.tsx`: ações, campos, escolhas, badges, tags, feedback, superfícies, tabela, overlays e cabeçalhos de página.
 - `src/design-system/styles.css`: regras de componentes, tabelas, navegação, padrões de página e responsividade.
 - `src/stories/`: Foundations, Components e Patterns renderizados pelo Storybook.
 

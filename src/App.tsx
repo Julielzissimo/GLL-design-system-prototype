@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 import { type ColumnDef, flexRender, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useReactTable, type SortingState, type VisibilityState } from '@tanstack/react-table'
 import * as Tabs from '@radix-ui/react-tabs'
 import { Activity, ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Bell, BookOpen, BriefcaseBusiness, Check, ChevronDown, ChevronRight, CircleHelp, ClipboardList, Columns3, FileCheck2, FileText, LayoutDashboard, Menu, MoreHorizontal, Package, Plus, Search, Settings2, SlidersHorizontal, Users, X } from 'lucide-react'
-import { Badge, Button, Dialog, Dropdown, DropdownItem, Field, IconButton, Input, PageHeader, Surface, Tooltip, type Tone } from './design-system/components'
+import { Badge, Button, Dialog, Dropdown, DropdownItem, EmptyState, Field, IconButton, Input, PageHeader, StatusBadge, Surface, Tooltip } from './design-system/components'
 import { budgets, declarations, initialBids, initialSuppliers, money, people, proposals, shortDate, type Bid, type BidStatus } from './data/demo'
 import './design-system/tokens.css'
 import './design-system/styles.css'
@@ -29,17 +29,10 @@ const nav = [
   ] },
 ]
 
-function statusTone(status: string): Tone {
-  if (['Aprovada', 'Faturado', 'Finalizada', 'Ativo'].includes(status)) return 'success'
-  if (['Em análise', 'Em elaboração', 'Rascunho', 'Em revisão'].includes(status)) return 'warning'
-  if (['Desclassificado'].includes(status)) return 'danger'
-  if (['Disputada'].includes(status)) return 'info'
-  return 'neutral'
-}
-function Status({ status }: { status: string }) { return <Badge tone={statusTone(status)}>{status}</Badge> }
+function Status({ status }: { status: string }) { return <StatusBadge status={status}/> }
 function getRoute() { return decodeURIComponent(window.location.hash.replace(/^#\/?/, '')) || 'visao-geral' }
 function go(path: string) { window.location.hash = `#/${path}` }
-function Empty({ title, text, action }: { title: string; text: string; action?: React.ReactNode }) { return <div className="gll-empty"><div className="gll-empty-icon"><Search size={22}/></div><h3>{title}</h3><p>{text}</p>{action}</div> }
+function Empty({ title, text, action }: { title: string; text: string; action?: React.ReactNode }) { return <EmptyState title={title} description={text} action={action}/> }
 function SectionHeading({ title, aside }: { title: string; aside?: React.ReactNode }) { return <div className="gll-section-heading"><h2>{title}</h2>{aside}</div> }
 
 const bidSchema = z.object({
