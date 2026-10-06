@@ -12,7 +12,8 @@ dist
 dist-ssr
 storybook-static
 public/icons.svg
-src/assets/
+src/assets/*
+!src/assets/marina-costa.png
 *.local
 
 # Editor directories and files

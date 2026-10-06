@@ -1,12 +1,23 @@
+import marinaAvatar from '../assets/marina-costa.png'
+
 export type BidStatus = 'Em análise' | 'Aprovada' | 'Descartada' | 'Faturado' | 'Disputada' | 'Desclassificado'
+export type BidItem = { id: string; number: number; description: string; quantity: number; cost: number; finalValue: number; won: boolean; model?: string; manufacturer?: string; technicalText?: string; suppliers?: string[]; specifications?: { name: string; value: string }[]; estimatedValue?: number; minimumBid?: number }
+export type BidDocument = { id: string; type: string; description: string; hasDocument: boolean }
+export type BidFailure = { id: string; type: string; description: string; actionPlan: string }
+export type BidAttachment = { id: string; name: string; size: number; file: File }
+export type BidStatusEntry = { id: string; from: BidStatus; to: BidStatus; reason: string; by: string; at: string }
 export type Bid = {
   id: string; edital: string; orgao: string; objeto: string; modalidade: string;
   status: BidStatus; sessao: string; valor: number; responsavel: string; documentos: number
+  createdBy?: string; sessionTime?: string; proposalDeadline?: string; deliveryPlace?: string;
+  publicSessionLink?: string; hasGuaranteeDeposit?: boolean; quotationId?: string;
+  items?: BidItem[]; checklist?: BidDocument[]; failures?: BidFailure[];
+  attachments?: BidAttachment[]; statusHistory?: BidStatusEntry[]
 }
 
 export const initialBids: Bid[] = [
-  { id: 'lic-01', edital: 'PE 014/2026', orgao: 'Município de Vale Sereno', objeto: 'Aquisição de computadores e monitores para unidades administrativas', modalidade: 'Pregão eletrônico', status: 'Em análise', sessao: '2026-10-08', valor: 184500, responsavel: 'Marina Costa', documentos: 2 },
-  { id: 'lic-02', edital: 'PE 021/2026', orgao: 'Secretaria de Saúde de Santa Aurora', objeto: 'Fornecimento de mobiliário clínico e equipamentos auxiliares', modalidade: 'Pregão eletrônico', status: 'Disputada', sessao: '2026-10-11', valor: 97200, responsavel: 'Lucas Andrade', documentos: 0 },
+  { id: 'lic-01', edital: 'PE 014/2026', orgao: 'Município de Vale Sereno', objeto: 'Aquisição de computadores e monitores para unidades administrativas', modalidade: 'Pregão eletrônico', status: 'Em análise', sessao: '2026-10-08', sessionTime: '09:30', proposalDeadline: '2026-10-07T18:00', deliveryPlace: 'Almoxarifado Central, Vale Sereno', valor: 184500, responsavel: 'Marina Costa', documentos: 2, createdBy: 'Marina Costa', hasGuaranteeDeposit: true, quotationId: 'ORC-0264', items: [{ id: 'item-1', number: 1, description: 'Computadores para unidades administrativas', quantity: 30, cost: 3700, finalValue: 4600, won: false }, { id: 'item-2', number: 2, description: 'Monitores LED 24 polegadas', quantity: 30, cost: 1100, finalValue: 1550, won: false }], checklist: [{ id: 'doc-1', type: 'Certidão fiscal', description: 'Validade até outubro de 2026', hasDocument: false }, { id: 'doc-2', type: 'Qualificação técnica', description: 'Atestados de fornecimento', hasDocument: false }] },
+  { id: 'lic-02', edital: 'PE 021/2026', orgao: 'Secretaria de Saúde de Santa Aurora', objeto: 'Fornecimento de mobiliário clínico e equipamentos auxiliares', modalidade: 'Pregão eletrônico', status: 'Disputada', sessao: '2026-10-11', valor: 97200, responsavel: 'Lucas Andrade', documentos: 0, createdBy: 'Lucas Andrade', quotationId: 'ORC-0261' },
   { id: 'lic-03', edital: 'CP 006/2026', orgao: 'Consórcio Intermunicipal do Horizonte', objeto: 'Materiais para infraestrutura de rede', modalidade: 'Concorrência', status: 'Aprovada', sessao: '2026-09-23', valor: 248900, responsavel: 'Marina Costa', documentos: 0 },
   { id: 'lic-04', edital: 'PE 033/2026', orgao: 'Município de Pedra Clara', objeto: 'Suprimentos de escritório para escolas municipais', modalidade: 'Pregão eletrônico', status: 'Em análise', sessao: '2026-10-15', valor: 68400, responsavel: 'Ana Ribeiro', documentos: 3 },
   { id: 'lic-05', edital: 'PE 018/2026', orgao: 'Fundação Cultural de Monte Azul', objeto: 'Equipamentos audiovisuais e acessórios', modalidade: 'Pregão eletrônico', status: 'Faturado', sessao: '2026-09-12', valor: 132600, responsavel: 'Lucas Andrade', documentos: 0 },
@@ -20,12 +31,14 @@ export const initialBids: Bid[] = [
 ]
 
 export const budgets = [
-  { id: 'ORC-0264', bidId: 'lic-01', title: 'Equipamentos de informática', items: 18, total: 158420, updated: '03 out 2026', stage: 'Em elaboração' },
-  { id: 'ORC-0261', bidId: 'lic-02', title: 'Mobiliário clínico', items: 12, total: 84650, updated: '02 out 2026', stage: 'Pronto para proposta' },
-  { id: 'ORC-0258', bidId: 'lic-03', title: 'Infraestrutura de rede', items: 26, total: 219870, updated: '29 set 2026', stage: 'Aprovado' },
-  { id: 'ORC-0255', bidId: 'lic-04', title: 'Papelaria escolar', items: 34, total: 58240, updated: '01 out 2026', stage: 'Em elaboração' },
-  { id: 'ORC-0248', bidId: 'lic-09', title: 'Tecnologia para salas de aula', items: 15, total: 389100, updated: '27 set 2026', stage: 'Aprovado' },
+  { id: 'ORC-0264', bidId: 'lic-01', agency: 'Município de Vale Sereno', title: 'Equipamentos de informática', items: 2, total: 184500, updated: '03 out 2026', stage: 'Em elaboração' },
+  { id: 'ORC-0261', bidId: 'lic-02', agency: 'Secretaria de Saúde de Santa Aurora', title: 'Mobiliário clínico', items: 12, total: 84650, updated: '02 out 2026', stage: 'Pronto para proposta' },
+  { id: 'ORC-0258', bidId: 'lic-03', agency: 'Consórcio Intermunicipal do Horizonte', title: 'Infraestrutura de rede', items: 26, total: 219870, updated: '29 set 2026', stage: 'Aprovado' },
+  { id: 'ORC-0255', bidId: 'lic-04', agency: 'Município de Pedra Clara', title: 'Papelaria escolar', items: 34, total: 58240, updated: '01 out 2026', stage: 'Em elaboração' },
+  { id: 'ORC-0248', bidId: 'lic-09', agency: 'Secretaria de Educação de Boa Vista do Sul', title: 'Tecnologia para salas de aula', items: 15, total: 389100, updated: '27 set 2026', stage: 'Aprovado' },
+  { id: 'ORC-0268', bidId: '', agency: 'Município de Pedra do Norte', title: 'Equipamentos para unidades administrativas', items: 0, total: 0, updated: '04 out 2026', stage: 'Em elaboração' },
 ]
+export type Budget = typeof budgets[number]
 
 export const initialSuppliers = [
   { id: 'for-01', name: 'Norte Equipamentos', category: 'Tecnologia', contact: 'contato@norteequipamentos.exemplo', city: 'Serra Nova', products: 24, status: 'Ativo' },
@@ -47,10 +60,12 @@ export const declarations = [
 ]
 
 export const people = [
-  { name: 'Marina Costa', role: 'Administrador', email: 'marina@gll-demo.exemplo', initials: 'MC', bids: 5, status: 'Ativo' },
+  { name: 'Marina Costa', role: 'Administrador', email: 'marina@gll-demo.exemplo', initials: 'MC', bids: 5, status: 'Ativo', avatarSrc: marinaAvatar },
   { name: 'Lucas Andrade', role: 'Analista', email: 'lucas@gll-demo.exemplo', initials: 'LA', bids: 4, status: 'Ativo' },
   { name: 'Ana Ribeiro', role: 'Analista', email: 'ana@gll-demo.exemplo', initials: 'AR', bids: 3, status: 'Ativo' },
 ]
+
+export const creatorAvatar = (name: string) => people.find((person) => person.name === name && 'avatarSrc' in person)?.avatarSrc
 
 export const money = (amount: number) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(amount)
 export const shortDate = (date: string) => new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`))

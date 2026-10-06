@@ -26,6 +26,7 @@ Lucide React é a biblioteca única de ícones **deste protótipo**. O inventár
 | Ações | `SlidersHorizontal` | Filtros. |
 | Ações | `Columns3` | Visibilidade de colunas. |
 | Ações | `MoreHorizontal` | Ações contextuais. |
+| Ações | `Download` | Exportação local dos itens do edital. |
 | Ações | `X` | Fechamento de painel, diálogo ou mensagem. |
 | Estados | `Check` | Item selecionado ou etapa confirmada. |
 | Estados | `CheckCircle2` | Confirmação de resultado positivo. |

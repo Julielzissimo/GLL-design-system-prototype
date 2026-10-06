@@ -10,7 +10,9 @@ Interface de trabalho para operações de licitação: legível, sóbria e compa
 - `src/design-system/components.tsx`: ações, campos, escolhas, badges, tags, feedback, superfícies, tabela, overlays e cabeçalhos de página.
 - `src/design-system/icons.ts`: exportações Lucide autorizadas, nomes, categorias e usos; [inventário de iconografia](ICONOGRAFIA.md).
 - `src/design-system/IconCatalog.tsx`: galeria pesquisável presente na página Design System e no Storybook.
+- `src/design-system/CreatorTag.tsx` e `creator-tag.css`: identificação de autoria usada na listagem e na página de edital.
 - `src/design-system/styles.css`: regras de componentes, tabelas, navegação, padrões de página e responsividade.
+- `src/pages/`: padrões navegáveis de listagem, cadastro e edição de licitações.
 - `src/stories/`: Foundations, Components e Patterns renderizados pelo Storybook.
 
 ## Regras de uso
@@ -24,10 +26,12 @@ Interface de trabalho para operações de licitação: legível, sóbria e compa
 7. Navegação de detalhe preserva retorno e breadcrumb. Mobile usa painel lateral acionado por botão.
 8. Toda variante compartilhada nova ou alterada deve aparecer no Storybook com estado normal, desabilitado ou inválido quando aplicável.
 9. Ícones vêm do catálogo central. Ações apenas com ícone recebem rótulo acessível; figuras decorativas são ocultadas da árvore de acessibilidade.
+10. A identificação “Criado por” usa `CreatorTag`. Mostre a foto quando existir e iniciais quando não existir; mantenha o nome legível em ambas as formas.
+11. Cadastro e edição de licitação usam página própria. Preserve campos, histórico e abas no mesmo contexto de navegação.
 
 ## Fundação técnica
 
-Radix fornece comportamento acessível para diálogos, dropdowns, tabs e tooltips. CVA define variantes de botão no padrão usado por shadcn/ui, mas todos os componentes visuais têm identidade própria GLL. Lucide é a única biblioteca de ícones do protótipo. TanStack Table controla sorting, filtering, pagination, column visibility e row selection. React Hook Form com Zod valida o cadastro fictício de licitação.
+Radix fornece comportamento acessível para diálogos, dropdowns, tabs e tooltips. CVA define variantes de botão no padrão usado por shadcn/ui, mas todos os componentes visuais têm identidade própria GLL. Lucide é a única biblioteca de ícones do protótipo. TanStack Table controla ordenação, filtros e paginação da lista de licitações. React Hook Form com Zod valida o cadastro e a edição fictícios de licitação.
 
 ## Breakpoints
 
@@ -46,3 +50,4 @@ Todos os dados são fictícios e mantidos apenas na sessão do navegador. Não h
 - [Componentes e páginas](COMPONENTES_E_PAGINAS.md): APIs compartilhadas, rotas e limites dos dados fictícios.
 - [Plano de adoção](PLANO_DE_ADOCAO.md): passos e critérios para levar a linguagem visual à aplicação real.
 - [Auditoria do frontend](AUDITORIA_FRONTEND.md): base técnica e inconsistências observadas antes do protótipo.
+- [Referência de licitações](LICITACOES_REFERENCIA.md): correspondência entre a página real e os fluxos fictícios do protótipo.

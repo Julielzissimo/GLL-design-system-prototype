@@ -1,7 +1,7 @@
 import {
   Activity, ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Bell, BookOpen,
   BriefcaseBusiness, Check, CheckCircle2, ChevronDown, ChevronRight,
-  CircleHelp, ClipboardList, Columns3, FileCheck2, FileText,
+  CircleHelp, ClipboardList, Columns3, Download, FileCheck2, FileText,
   LayoutDashboard, Menu, MoreHorizontal, Package, Plus, Search,
   Settings2, SlidersHorizontal, Users, X,
   type LucideIcon,
@@ -10,7 +10,7 @@ import {
 export {
   Activity, ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Bell, BookOpen,
   BriefcaseBusiness, Check, CheckCircle2, ChevronDown, ChevronRight,
-  CircleHelp, ClipboardList, Columns3, FileCheck2, FileText,
+  CircleHelp, ClipboardList, Columns3, Download, FileCheck2, FileText,
   LayoutDashboard, Menu, MoreHorizontal, Package, Plus, Search,
   Settings2, SlidersHorizontal, Users, X,
 }
@@ -46,6 +46,7 @@ export const iconCatalog: readonly IconDefinition[] = [
   { name: 'SlidersHorizontal', label: 'Filtrar', category: 'Ações', usage: 'Ajusta filtros de listagem.', Icon: SlidersHorizontal },
   { name: 'Columns3', label: 'Colunas', category: 'Ações', usage: 'Mostra ou oculta colunas da tabela.', Icon: Columns3 },
   { name: 'MoreHorizontal', label: 'Mais opções', category: 'Ações', usage: 'Abre ações contextuais.', Icon: MoreHorizontal },
+  { name: 'Download', label: 'Baixar', category: 'Ações', usage: 'Exporta itens do edital.', Icon: Download },
   { name: 'X', label: 'Fechar', category: 'Ações', usage: 'Fecha painel, diálogo ou mensagem.', Icon: X },
   { name: 'Check', label: 'Selecionado', category: 'Estados', usage: 'Confirma uma seleção ou etapa.', Icon: Check },
   { name: 'CheckCircle2', label: 'Concluído', category: 'Estados', usage: 'Confirma resultado positivo.', Icon: CheckCircle2 },
