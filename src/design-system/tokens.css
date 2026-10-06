@@ -18,6 +18,9 @@
   --gll-danger-bg: #f7e9e5;
   --gll-info: #35647c;
   --gll-info-bg: #e6eef1;
+  --gll-selection-bg: #e4edff;
+  --gll-selection-control: #2563eb;
+  --gll-selection-ink: #19345b;
   --gll-focus: #ad7237;
   --gll-font-body: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
   --gll-font-display: 'IBM Plex Serif', Georgia, serif;

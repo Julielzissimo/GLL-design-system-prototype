@@ -28,6 +28,7 @@ Interface de trabalho para operações de licitação: legível, sóbria e organ
 9. Ícones vêm do catálogo central. Ações apenas com ícone recebem rótulo acessível; figuras decorativas são ocultadas da árvore de acessibilidade.
 10. A identificação “Criado por” usa `CreatorTag`. Mostre a foto quando existir e iniciais quando não existir; mantenha o nome legível em ambas as formas.
 11. Cadastro e edição de licitação usam página própria. Preserve campos, histórico e abas no mesmo contexto de navegação.
+12. Na escolha do tipo do edital, toda a opção selecionada recebe fundo azul claro; o rádio mantém seu indicador nativo azul. O foco de teclado aparece no contorno da opção. As cores desse estado estão em `--gll-selection-*`.
 
 ## Escala de leitura
 

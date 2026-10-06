@@ -23,3 +23,14 @@ table.gll-bid-table{min-width:1260px}table.gll-bid-table th:first-child,table.gl
 table.gll-bid-table{min-width:1360px}
 table.gll-bid-table th:first-child,table.gll-bid-table td:first-child{width:240px;min-width:240px}
 .gll-bid-number .gll-creator-tag{min-width:195px}
+
+/* O tipo do edital preserva o rádio nativo e destaca toda a opção ativa. */
+.gll-bid-type{align-content:start;align-items:center;gap:7px 10px;padding:0;border:0}
+.gll-bid-type legend{padding:0;margin-bottom:6px}
+.gll-bid-type>label{min-height:40px;gap:9px;padding:0 14px;border-radius:8px;cursor:pointer;transition:background-color .15s,color .15s}
+.gll-bid-type>label:hover:not(:has(input:disabled)):not(:has(input:checked)){background:#f0f4fb}
+.gll-bid-type>label:has(input:checked){background:var(--gll-selection-bg);color:var(--gll-selection-ink);font-weight:600}
+.gll-bid-type>label:has(input:focus-visible){outline:2px solid var(--gll-selection-control);outline-offset:2px}
+.gll-bid-type>label:has(input:disabled){cursor:not-allowed;opacity:.7}
+.gll-bid-type input{width:18px;height:18px;margin:0;accent-color:var(--gll-selection-control)}
+.gll-bid-type input:focus-visible{outline:none}
