@@ -19,7 +19,7 @@
 
 | Família | Componentes | Contrato e estados principais |
 | --- | --- | --- |
-| Ações | `Button`, `IconButton` | Variantes `primary`, `secondary`, `quiet`, `danger`; tamanhos `default`, `small`, `icon`; `disabled`. `IconButton` exige `label` para nome acessível. |
+| Ações | `Button`, `IconButton` | Variantes `primary`, `secondary`, `quiet`, `danger`; tamanhos `default` (44 px), `small` (38 px), `icon` (42 px); `disabled`. `IconButton` exige `label` para nome acessível. |
 | Superfícies e estrutura | `Surface`, `PageHeader` | Painel com borda e espaçamento; cabeçalho com contexto, título, descrição e ações. |
 | Campos | `Field`, `Input`, `Select`, `Textarea` | Label persistente, ajuda, indicação de obrigatório, erro textual e `aria-invalid` no controle inválido. |
 | Escolhas | `Checkbox`, `Radio`, `Switch` | Estados controlados, seleção por teclado e `disabled` onde disponível. |

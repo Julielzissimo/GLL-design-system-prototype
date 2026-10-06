@@ -2,7 +2,7 @@
 
 ## Direção
 
-Interface de trabalho para operações de licitação: legível, sóbria e compacta. A linguagem evita gradientes decorativos, excesso de pills, sombras fortes e blocos sem hierarquia. As superfícies lembram papel; o verde escuro identifica ação e navegação; o âmbar aparece apenas como acento.
+Interface de trabalho para operações de licitação: legível, sóbria e organizada. A linguagem evita gradientes decorativos, excesso de pills, sombras fortes e blocos sem hierarquia. As superfícies lembram papel; o verde escuro identifica ação e navegação; o âmbar aparece apenas como acento.
 
 ## Fonte única
 
@@ -21,13 +21,26 @@ Interface de trabalho para operações de licitação: legível, sóbria e compa
 2. Ações primárias usam um botão por contexto; ações secundárias são contornadas; ações discretas ficam junto ao conteúdo.
 3. Campos têm label persistente, indicação textual de erro e `aria-invalid`. O asterisco sinaliza obrigatoriedade.
 4. Estados combinam texto e cor. Erros e avisos devem indicar o que revisar.
-5. Tabelas mostram dados compactos; cabeçalhos ordenam, filtros reduzem resultados, e a paginação fica no rodapé.
+5. Tabelas mostram dados legíveis em 14 px, com cabeçalhos de 13 px; cabeçalhos ordenam, filtros reduzem resultados, e a paginação fica no rodapé. Quando necessário, a tabela rola horizontalmente.
 6. Diálogos usam Radix para foco e teclado. Dropdowns e tooltips usam as mesmas primitivas.
 7. Navegação de detalhe preserva retorno e breadcrumb. Mobile usa painel lateral acionado por botão.
 8. Toda variante compartilhada nova ou alterada deve aparecer no Storybook com estado normal, desabilitado ou inválido quando aplicável.
 9. Ícones vêm do catálogo central. Ações apenas com ícone recebem rótulo acessível; figuras decorativas são ocultadas da árvore de acessibilidade.
 10. A identificação “Criado por” usa `CreatorTag`. Mostre a foto quando existir e iniciais quando não existir; mantenha o nome legível em ambas as formas.
 11. Cadastro e edição de licitação usam página própria. Preserve campos, histórico e abas no mesmo contexto de navegação.
+
+## Escala de leitura
+
+| Papel | Tamanho proposto |
+| --- | --- |
+| Texto principal | 16 px; entrelinha de 1,5. |
+| Texto de campos, ações, navegação e dados de tabela | 14 px, com rótulos persistentes de 13 px. |
+| Cabeçalhos de tabela | 13 px. |
+| Informação auxiliar e legendas | 12–13 px; evitar texto operacional abaixo de 12 px. |
+| Controles principais | Altura mínima de 44 px; variantes pequenas de 38 px. |
+| Cartão de autoria compacto | Altura mínima de 44 px, foto de 34 px e nome de 13 px. |
+
+Os valores vivem em `src/design-system/tokens.css`, `styles.css`, `creator-tag.css` e `src/pages/bid-pages.css`. A página `#/design-system`, seção Tipografia, mostra a escala. O Storybook reproduz o mesmo exemplo em **Foundations / Typography**.
 
 ## Fundação técnica
 

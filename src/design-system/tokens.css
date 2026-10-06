@@ -22,12 +22,12 @@
   --gll-font-body: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
   --gll-font-display: 'IBM Plex Serif', Georgia, serif;
   --gll-font-mono: 'IBM Plex Mono', Consolas, monospace;
-  --gll-text-xs: .72rem;
-  --gll-text-sm: .82rem;
-  --gll-text-md: .94rem;
-  --gll-text-lg: 1.14rem;
-  --gll-text-xl: 1.62rem;
-  --gll-text-display: clamp(1.9rem, 2.7vw, 2.75rem);
+  --gll-text-xs: .75rem;
+  --gll-text-sm: .875rem;
+  --gll-text-md: 1rem;
+  --gll-text-lg: 1.2rem;
+  --gll-text-xl: 1.7rem;
+  --gll-text-display: clamp(2rem, 2.7vw, 2.8rem);
   --gll-space-1: .25rem;
   --gll-space-2: .5rem;
   --gll-space-3: .75rem;
@@ -41,6 +41,6 @@
   --gll-shadow-sm: 0 2px 8px rgb(24 41 35 / 5%);
   --gll-shadow-md: 0 14px 34px rgb(24 41 35 / 12%);
   --gll-shadow-overlay: 0 30px 70px rgb(10 30 24 / 22%);
-  --gll-sidebar-width: 238px;
-  --gll-control-height: 40px;
+  --gll-sidebar-width: 258px;
+  --gll-control-height: 44px;
 }
