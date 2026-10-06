@@ -45,6 +45,10 @@ Lucide React é a biblioteca única de ícones **deste protótipo**. O inventár
 - Não acrescente emoji, fonte de ícones, SVG avulso ou uma segunda biblioteca a uma nova tela. Se a Lucide não atender a um caso real, registre a exceção e revise a regra antes da adoção.
 - Para adicionar um ícone, inclua-o em `icons.ts` com categoria, rótulo e uso; utilize a exportação central; verifique a galeria, o Storybook e atualize este inventário.
 
+### Estado atual da padronização
+
+A galeria apresenta os ícones em 24 px com traço de 1,8 px. Telas do protótipo anteriores a este catálogo ainda usam medidas entre 12 e 23 px e, quando `strokeWidth` não é informado, o traço padrão da Lucide. Portanto, a escala 16/20/24 px e o traço de 1,8 px são **regras propostas para a adoção**, não uma afirmação de que todas as instâncias da cópia já estejam normalizadas. A revisão de cada contexto visual e de suas áreas de interação faz parte da migração descrita em [PLANO_DE_ADOCAO.md](PLANO_DE_ADOCAO.md).
+
 ## Exemplo
 
 ```tsx

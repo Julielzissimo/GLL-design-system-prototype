@@ -43,8 +43,8 @@ export function IconCatalog() {
       )}
     </div> : <p className="gll-icon-empty" role="status">Nenhum ícone corresponde à busca. Revise o termo ou escolha outra categoria.</p>}
     <div className="gll-icon-guidance" aria-label="Regras de iconografia">
-      <div><strong>Tamanhos</strong><span>16 px em controles compactos, 20 px em ações e 24 px em destaques.</span></div>
-      <div><strong>Traço e cor</strong><span>Traço de 1,8 px, com cor herdada do texto e contraste do contexto.</span></div>
+      <div><strong>Escala proposta</strong><span>16 px em controles compactos, 20 px em ações e 24 px em destaques.</span></div>
+      <div><strong>Traço de referência</strong><span>1,8 px, com cor herdada do texto e contraste do contexto.</span></div>
       <div><strong>Significado</strong><span>Ícones decorativos usam <code>aria-hidden</code>; ações sem texto recebem nome acessível.</span></div>
     </div>
     <a className="gll-text-link gll-icon-doc-link" href="https://github.com/Julielzissimo/GLL-design-system-prototype/blob/homolog/docs/ICONOGRAFIA.md">Consultar inventário e regras completas <ArrowRight size={15} aria-hidden="true" /></a>
