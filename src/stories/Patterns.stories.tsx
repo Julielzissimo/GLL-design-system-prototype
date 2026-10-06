@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react-vite'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight } from '../design-system/icons'
 import { Badge, Button, PageHeader, Surface, Table } from '../design-system/components'
 
 const meta = { title: 'GLL Design System/Patterns' } satisfies Meta

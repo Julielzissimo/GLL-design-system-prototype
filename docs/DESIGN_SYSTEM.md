@@ -8,6 +8,8 @@ Interface de trabalho para operações de licitação: legível, sóbria e compa
 
 - `src/design-system/tokens.css`: cores, tipografia, escala espacial, formas, elevação e dimensões.
 - `src/design-system/components.tsx`: ações, campos, escolhas, badges, tags, feedback, superfícies, tabela, overlays e cabeçalhos de página.
+- `src/design-system/icons.ts`: exportações Lucide autorizadas, nomes, categorias e usos; [inventário de iconografia](ICONOGRAFIA.md).
+- `src/design-system/IconCatalog.tsx`: galeria pesquisável presente na página Design System e no Storybook.
 - `src/design-system/styles.css`: regras de componentes, tabelas, navegação, padrões de página e responsividade.
 - `src/stories/`: Foundations, Components e Patterns renderizados pelo Storybook.
 
@@ -21,6 +23,7 @@ Interface de trabalho para operações de licitação: legível, sóbria e compa
 6. Diálogos usam Radix para foco e teclado. Dropdowns e tooltips usam as mesmas primitivas.
 7. Navegação de detalhe preserva retorno e breadcrumb. Mobile usa painel lateral acionado por botão.
 8. Toda variante compartilhada nova ou alterada deve aparecer no Storybook com estado normal, desabilitado ou inválido quando aplicável.
+9. Ícones vêm do catálogo central. Ações apenas com ícone recebem rótulo acessível; figuras decorativas são ocultadas da árvore de acessibilidade.
 
 ## Fundação técnica
 
@@ -36,3 +39,10 @@ Radix fornece comportamento acessível para diálogos, dropdowns, tabs e tooltip
 ## Limites do protótipo
 
 Todos os dados são fictícios e mantidos apenas na sessão do navegador. Não há login, persistência, geração de PDF, e-mail, Supabase ou permissões reais. Algumas ações mostram o resultado pretendido em mensagens de demonstração, enquanto os fluxos completos dependem da implementação posterior no produto. A publicação deste protótipo não promove mudanças ao `main` dos repositórios GLL.
+
+## Documentação complementar
+
+- [Iconografia](ICONOGRAFIA.md): inventário completo, tamanhos, semântica, acessibilidade e inclusão de novos ícones.
+- [Componentes e páginas](COMPONENTES_E_PAGINAS.md): APIs compartilhadas, rotas e limites dos dados fictícios.
+- [Plano de adoção](PLANO_DE_ADOCAO.md): passos e critérios para levar a linguagem visual à aplicação real.
+- [Auditoria do frontend](AUDITORIA_FRONTEND.md): base técnica e inconsistências observadas antes do protótipo.

@@ -5,7 +5,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog'
 import * as DropdownPrimitive from '@radix-ui/react-dropdown-menu'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
-import { Check, CheckCircle2, Search, X } from 'lucide-react'
+import { Check, CheckCircle2, Search, X } from './icons'
 
 const buttonStyles = cva('gll-button', {
   variants: {

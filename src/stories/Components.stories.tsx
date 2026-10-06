@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { Meta } from '@storybook/react-vite'
-import { ArrowRight, MoreHorizontal, Plus } from 'lucide-react'
+import { ArrowRight, MoreHorizontal, Plus } from '../design-system/icons'
 import { Alert, Badge, Button, Checkbox, Dialog, Dropdown, DropdownItem, EmptyState, Field, IconButton, Input, Loading, PageHeader, Radio, Select, Skeleton, StatusBadge, Surface, Switch, Tag, Textarea, Toast, Tooltip } from '../design-system/components'
 
 const meta = { title: 'GLL Design System/Components' } satisfies Meta
